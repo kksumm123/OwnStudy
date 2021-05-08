@@ -7,7 +7,8 @@ public class FireArrow : MonoBehaviour
 {
     public GameObject arrow;
     public Transform arrowPointTransform;
-    public float fireDelay = 0.2f;
+    public Animator animator;
+    public float fireDelay = 0.5f;
 
     // Update is called once per frame
     void Update()
@@ -18,6 +19,8 @@ public class FireArrow : MonoBehaviour
 
     private IEnumerator OnFireArrow()
     {
+        animator.Play("Attack01", 0, 0);
+
         yield return new WaitForSeconds(fireDelay);
 
         Instantiate(arrow, arrowPointTransform.position, this.transform.rotation);
