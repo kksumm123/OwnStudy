@@ -8,7 +8,7 @@ public class Monster : MonoBehaviour
 {
     public int maxHP = 3;
     public int curHP;
-    public float speed = 1.5f;
+    public float speed = 3f;
     public Animator animator;
     float originSpeed;
     public Transform hpBar;
