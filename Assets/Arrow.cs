@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 10f;
 
     // Update is called once per frame
     void Update()
