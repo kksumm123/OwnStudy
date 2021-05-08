@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     public List<Transform> spawner;
     public GameObject monster;
     public bool isPlaying = true;
-    public float spawnDelay = 1.5f;
+    public float spawnDelay = 1f;
 
     IEnumerator Start()
     {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -10,10 +11,22 @@ public class Monster : MonoBehaviour
     public float speed = 1.5f;
     public Animator animator;
     float originSpeed;
+    public Transform hpBar;
+    public TextMeshPro hptmPro;
+
     private void Start()
     {
         curHP = maxHP;
         originSpeed = speed;
+        UpdateHP();
+    }
+
+    private void UpdateHP()
+    {
+        hptmPro.text = $"{curHP} / {maxHP}";
+        var scale = hpBar.localScale;
+        scale.x = curHP / (float)maxHP;
+        hpBar.localScale = scale;
     }
 
     void Update()
@@ -25,6 +38,7 @@ public class Monster : MonoBehaviour
         Destroy(other.gameObject);
 
         curHP--;
+        UpdateHP();
         if (curHP > 0)
             StartCoroutine(Attacked());
         else
@@ -35,6 +49,7 @@ public class Monster : MonoBehaviour
     public float attackedDelay = 0.3f;
     private IEnumerator Attacked()
     {
+
         animator.Play("GetHit", 0, 0);
         speed = 0;
         yield return new WaitForSeconds(attackedDelay);
@@ -49,7 +64,9 @@ public class Monster : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         enabled = false;
         animator.Play("Die", 0, 0);
-
+        var hpBarScale = hpBar.localScale;
+        hpBarScale.x = 0;
+        hpBar.localScale = hpBarScale;
         yield return new WaitForSeconds(dieDelay);
 
         Destroy(gameObject);
