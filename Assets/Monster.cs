@@ -64,9 +64,7 @@ public class Monster : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         enabled = false;
         animator.Play("Die", 0, 0);
-        var hpBarScale = hpBar.localScale;
-        hpBarScale.x = 0;
-        hpBar.localScale = hpBarScale;
+        Destroy(hptmPro.gameObject);
         yield return new WaitForSeconds(dieDelay);
 
         Destroy(gameObject);
