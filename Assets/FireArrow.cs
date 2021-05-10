@@ -8,7 +8,7 @@ public class FireArrow : MonoBehaviour
     public GameObject arrow;
     public Transform arrowPointTransform;
     public Animator animator;
-    public float fireDelay = 0.5f;
+    public float fireDelay = 0.2f;
 
     // Update is called once per frame
     void Update()

@@ -130,17 +130,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 604404826, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1919012471076396, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       propertyPath: m_Name
       value: SlimePBR
       objectReference: {fileID: 0}
     - target: {fileID: 1919012471076396, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4023215848608658, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       propertyPath: m_RootOrder
@@ -626,7 +622,7 @@ MonoBehaviour:
   arrow: {fileID: 5817817387637253086, guid: 4b0bbd49ffda29e4c8f9f4e4d7a71315, type: 3}
   arrowPointTransform: {fileID: 1554463925}
   animator: {fileID: 1185482117}
-  fireDelay: 0.5
+  fireDelay: 0.2
 --- !u!1 &855013879
 GameObject:
   m_ObjectHideFlags: 0
